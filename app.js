@@ -1,50 +1,46 @@
-var temp; var opt; var z;
+var variable1; var operator; var variable2;
 function operate(id) {
-    if (opt != undefined && opt != " ") {
-        if (z == undefined || z == " ") {
-            z = id;
-            z = document.getElementById("demo").innerHTML = z;
-            z = parseInt(z);
+    if (operator != undefined && operator != " " && variable1 != undefined) {
+        if (variable2 == undefined || variable2 == " ") {
+            variable2 = id;
+            variable2 = document.getElementById("demo").innerHTML = variable2;
         }
         else {
-            z = z + id;
-            document.getElementById("demo").innerHTML = z;
-            z = parseInt(z);
+            variable2 = variable2 + id;
+            document.getElementById("demo").innerHTML = variable2;
         }
-    }
-    else {
-        temp = document.getElementById("demo").innerHTML;
-        if (temp == " ") {
-            temp = document.getElementById("demo").innerHTML = id;
+    } else {
+        variable1 = document.getElementById("demo").innerHTML;
+        if (variable1 == " ") {
+            variable1 = document.getElementById("demo").innerHTML = id;
         }
         else {
-            temp = document.getElementById("demo").innerHTML = temp + id;
-            temp = parseInt(temp);
+            variable1 = document.getElementById("demo").innerHTML = variable1 + id;
         }
     }
 }
 // for getting the operator values 
 function calc(id) {
-    if (opt != undefined && opt != " ") {
-        if(z == undefined) {
-            opt = id;
+    if (operator != undefined && operator != " ") {
+        if(variable2 == undefined) {
+            operator = id;
         } else {
             $.ajax({
                 url : "ajax.php",
                 method : "POST",
-                data : {data: id, operator : opt, tempVar: temp, nextVar : z},
+                data : {data: id, operator : operator, tempVar: variable1, nextVar : variable2},
                 dataType : "json"
             }).done(function(msg){
                 document.getElementById("demo").innerHTML = msg.arr[0] ;
-                temp = msg.arr[0];
-                opt = msg.arr[3];
-                console.log(opt);
-                z = undefined;
+                variable1 = msg.arr[0];
+                operator = msg.arr[3];
+                console.log(operator);
+                variable2 = undefined;
             });
         }
         
     } else {
-        opt = id;
+        operator = id;
     }
 }
 // for calculating the values
@@ -52,20 +48,20 @@ function calculate() {
     $.ajax({
         url : "ajax.php",
         method : "POST",
-        data : {data: opt, operator : opt, tempVar: temp, nextVar : z},
+        data : {data: operator, operator : operator, tempVar: variable1, nextVar : variable2},
         dataType : "json"
     }).done(function(msg){
         document.getElementById("demo").innerHTML = msg.arr[0] ;
-        temp = msg.arr[0];
-        opt = undefined;
-        console.log(opt);
-        z = undefined;
+        variable1 = msg.arr[0];
+        operator = undefined;
+        console.log(operator);
+        variable2 = undefined;
     });
 }
 // for clearing the screen
 function clear_screen() {
-    temp = " ";
-    opt = " ";
-    z = " ";
-    document.getElementById("demo").innerHTML = temp;
+    variable1 = " ";
+    operator = " ";
+    variable2 = " ";
+    document.getElementById("demo").innerHTML = variable1;
 }
