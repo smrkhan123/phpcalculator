@@ -1,0 +1,29 @@
+body {
+    background-image: url("https://images.wallpaperscraft.com/image/cube_dark_texture_shape_119956_1920x1080.jpg");
+}
+#main {
+    width: 355px;
+    margin: 100px auto;
+    border: 2px solid rgb(255, 255, 255);
+    color: white;
+    background-color: gray;
+}
+#wrapper #main .screen, #wrapper #main .screen {
+    padding: 20px;
+    border: 1px solid black;
+}
+table{
+    margin: 0 auto;
+}
+table td {
+    border: 1px solid;
+    padding: 20px 29px;
+    border-radius: 5px solid white;
+}
+table td:hover {
+    background-color: black;
+    color:white;
+}
+#clear {
+    text-align: center;
+}

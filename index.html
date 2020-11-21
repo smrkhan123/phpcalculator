@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="main">
+            <h1 style="text-align: center;">Calculator</h1>
+            <div class="screen">
+                <p id="demo"></p>
+            </div>
+            <div class="keypad">
+                <table>
+                    <tr>
+                        <td id="9" onclick="operate(id)">9</td>
+                        <td id="8" onclick="operate(id)">8</td>
+                        <td id="7" onclick="operate(id)">7</td>
+                        <td id="divide" onclick="calc(id)">/</td>
+                        <td id="multiply" onclick="calc(id)">*</td>
+                    </tr>
+                    <tr>
+                        <td id="6" onclick="operate(id)">6</td>
+                        <td id="5" onclick="operate(id)">5</td>
+                        <td id="4" onclick="operate(id)">4</td>
+                        <td id="substract" onclick="calc(id)">-</td>
+                        <td id="add" onclick="calc(id)">+</td>
+                    </tr>
+                    <tr>
+                        <td id="3" onclick="operate(id)">3</td>
+                        <td id="2" onclick="operate(id)">2</td>
+                        <td id="1" onclick="operate(id)">1</td>
+                        <td id="0" onclick="operate(id)">0</td>
+                        <td id="equal" onclick="calculate()">=</td>
+                    </tr>
+                    <tr>
+                        <td id="clear" onclick="clear_screen()" colspan="5">Clear</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
