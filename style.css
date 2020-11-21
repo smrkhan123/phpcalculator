@@ -27,3 +27,11 @@ table td:hover {
 #clear {
     text-align: center;
 }
+.screen {
+    background-color: white;
+    color: black;
+}
+.screen #demo {
+    margin : 0px;
+    padding: 0px;
+}
