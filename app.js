@@ -32,6 +32,7 @@ function calc(id) {
                 dataType : "json"
             }).done(function(msg){
                 document.getElementById("demo").innerHTML = msg.arr[0] ;
+<<<<<<< HEAD
                 if(msg.arr[0]==""){
                     variable1 = undefined;
                     operator = undefined;
@@ -43,6 +44,12 @@ function calc(id) {
                     console.log(operator);
                     variable2 = undefined;
                 }
+=======
+                variable1 = msg.arr[0];
+                operator = msg.arr[3];
+                console.log(operator);
+                variable2 = undefined;
+>>>>>>> 88734bfa63d1064fcb27b846023b35b980b1a571
             });
         }
         
@@ -59,6 +66,7 @@ function calculate() {
         dataType : "json"
     }).done(function(msg){
         document.getElementById("demo").innerHTML = msg.arr[0] ;
+<<<<<<< HEAD
         if(msg.arr[0]==""){
             variable1 = undefined;
             operator = undefined;
@@ -70,6 +78,12 @@ function calculate() {
             console.log(operator);
             variable2 = undefined;
         }
+=======
+        variable1 = msg.arr[0];
+        operator = undefined;
+        console.log(operator);
+        variable2 = undefined;
+>>>>>>> 88734bfa63d1064fcb27b846023b35b980b1a571
     });
 }
 // for clearing the screen

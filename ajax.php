@@ -20,4 +20,8 @@ $opt = $id;
 $nextVar = " ";
 $arr = array($tempVar, $opt, $nextVar, $id);
 echo json_encode(array("arr" => $arr));
+<<<<<<< HEAD
 ?>
+=======
+?>
+>>>>>>> 88734bfa63d1064fcb27b846023b35b980b1a571
